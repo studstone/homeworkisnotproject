@@ -7,30 +7,25 @@ const DomElement = function (selector, height, width, bg, fontSize) {
     this.bg = bg,
     this.fontSize = fontSize,
     this.newElement = () => {
+      let div = {};
       if (this.selector.startsWith('.', 0)) {
-        const div = document.createElement('div');
+        div = document.createElement('div');
         div.classList = this.selector;
-        div.style.cssText = `
-      height: ${this.height};
-      width: ${this.width};
-      background: ${this.bg};
-      fontSize: ${this.fontSize};
-      `;
         div.textContent = 'Господа, существующая теория обеспечивает широкому кругу (специалистов) участие в формировании анализа существующих паттернов поведения. А ещё предприниматели в сети интернет объективно рассмотрены соответствующими инстанциями.';
-        document.body.prepend(div);
       }
       if (this.selector.startsWith('#', 0)) {
-        const div = document.createElement('p');
+        div = document.createElement('p');
         div.id = this.selector;
-        div.style.cssText = `
+        div.textContent = 'Господа, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития. Но стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов.';
+      }
+      div.style.cssText = `
       height: ${this.height};
       width: ${this.width};
       background: ${this.bg};
       fontSize: ${this.fontSize};
       `;
-        div.textContent = 'Господа, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития. Но стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов.';
-        document.body.prepend(div);
-      }
+      document.body.prepend(div);
+      console.log(typeof div);
     };
 
 };
