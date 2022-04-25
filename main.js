@@ -20,16 +20,16 @@ const DomElement = function (selector, height, width, bg, fontSize) {
         document.body.prepend(div);
       }
       if (this.selector.startsWith('#', 0)) {
-        const paragraph = document.createElement('p');
-        paragraph.id = this.selector;
-        paragraph.style.cssText = `
+        const div = document.createElement('p');
+        div.id = this.selector;
+        div.style.cssText = `
       height: ${this.height};
       width: ${this.width};
       background: ${this.bg};
       fontSize: ${this.fontSize};
       `;
-        paragraph.textContent = 'Господа, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития. Но стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов.';
-        document.body.prepend(paragraph);
+        div.textContent = 'Господа, постоянный количественный рост и сфера нашей активности, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для модели развития. Но стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, указаны как претенденты на роль ключевых факторов.';
+        document.body.prepend(div);
       }
     };
 
