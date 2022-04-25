@@ -22,14 +22,13 @@ const DomElement = function (selector, height, width, bg, fontSize) {
       height: ${this.height};
       width: ${this.width};
       background: ${this.bg};
-      fontSize: ${this.fontSize};
+      font-size: ${this.fontSize};
       `;
       document.body.prepend(div);
-      console.log(typeof div);
     };
 
 };
 
 const newDomElement = new DomElement();
-newDomElement.selector = '.block';
+newDomElement.selector = '#block';
 newDomElement.newElement();
