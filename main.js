@@ -17,10 +17,10 @@ const calculator = {
   }
 };
 
-a.addEventListener('change', () => {
+inputA.addEventListener('change', () => {
   calculator.inputA = +inputA.value;
 });
-b.addEventListener('change', () => {
+inputB.addEventListener('change', () => {
   calculator.inputB = +inputB.value;
 });
 
