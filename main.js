@@ -1,17 +1,35 @@
 'use strict';
+const a = document.getElementById('a');
+const b = document.getElementById('b');
+const res = document.getElementById('res');
+const btnSum = document.getElementById('sum');
+const btnMult = document.getElementById('mult');
 
-class First {
-  hello() {
-    console.log(`Привет я метод родителя!`);
+const calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+  mult() {
+    return this.a * this.b;
+  },
+  show(result) {
+    res.value = result;
   }
-}
+};
 
-class Second extends First {
-  hello() {
-    super.hello();
-    console.log(`А я наследуемый метод!`);
-  }
-}
+a.addEventListener('change', () => {
+  calculator.a = +a.value;
+});
+b.addEventListener('change', () => {
+  calculator.b = +b.value;
+});
 
-const head = new Second();
-head.hello();
+btnSum.addEventListener('click', () => {
+  const result = calculator.sum();
+  calculator.show(result);
+});
+
+btnMult.addEventListener('click', () => {
+  const result = calculator.mult();
+  calculator.show(result);
+});
