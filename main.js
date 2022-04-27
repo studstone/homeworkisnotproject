@@ -1,27 +1,27 @@
 'use strict';
-const a = document.getElementById('a');
-const b = document.getElementById('b');
-const res = document.getElementById('res');
+const inputA = document.getElementById('a');
+const inputB = document.getElementById('b');
+const inputRes = document.getElementById('res');
 const btnSum = document.getElementById('sum');
 const btnMult = document.getElementById('mult');
 
 const calculator = {
   sum() {
-    return this.a + this.b;
+    return this.inputA + this.inputB;
   },
   mult() {
-    return this.a * this.b;
+    return this.inputA * this.inputB;
   },
   show(result) {
-    res.value = result;
+    inputRes.value = result;
   }
 };
 
 a.addEventListener('change', () => {
-  calculator.a = +a.value;
+  calculator.inputA = +inputA.value;
 });
 b.addEventListener('change', () => {
-  calculator.b = +b.value;
+  calculator.inputB = +inputB.value;
 });
 
 btnSum.addEventListener('click', () => {
