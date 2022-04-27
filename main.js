@@ -1,35 +1,10 @@
 'use strict';
-const inputA = document.getElementById('a');
-const inputB = document.getElementById('b');
-const inputRes = document.getElementById('res');
-const btnSum = document.getElementById('sum');
-const btnMult = document.getElementById('mult');
 
-const calculator = {
-  sum() {
-    return this.inputA + this.inputB;
-  },
-  mult() {
-    return this.inputA * this.inputB;
-  },
-  show(result) {
-    inputRes.value = result;
-  }
-};
+function getResult(x, y) {
+  let result = Math.pow(x, y);
+  let arr = result.toString(10).split('').map(int => parseInt(int, 10));
+  let sum = arr.map(i => x += i, x = 0).reverse()[0];
+  return sum;
+}
 
-inputA.addEventListener('change', () => {
-  calculator.inputA = +inputA.value;
-});
-inputB.addEventListener('change', () => {
-  calculator.inputB = +inputB.value;
-});
-
-btnSum.addEventListener('click', () => {
-  const result = calculator.sum();
-  calculator.show(result);
-});
-
-btnMult.addEventListener('click', () => {
-  const result = calculator.mult();
-  calculator.show(result);
-});
+console.log(getResult(4, 8));
